@@ -1,0 +1,31 @@
+{ "type": "Topology",
+    "objects": {
+        "airports": {
+            "type": "FeatureCollection",
+            "features": [
+                {"type":"Feature","properties":{"id":"3613","name":"Savannah Hilton Head International Airport","city":"Savannah","country":"United States","faa":"SAV","icao":"KSAV","alt":"50","tz-offset":"-5","dst":"A","tz":"America/New_York"},"geometry":{"type":"Point","coordinates":[-81.20210266,32.12760162]}},
+                {"type":"Feature","properties":{"id":"3589","name":"Westchester County Airport","city":"White Plains","country":"United States","faa":"HPN","icao":"KHPN","alt":"439","tz-offset":"-5","dst":"A","tz":"America/New_York"},"geometry":{"type":"Point","coordinates":[-73.70760345458984,41.06700134277344]}},
+                {"type":"Feature","properties":{"id":"3364","name":"Beijing Capital International Airport","city":"Beijing","country":"China","faa":"PEK","icao":"ZBAA","alt":"116","tz-offset":"8","dst":"U","tz":"Asia/Shanghai"},"geometry":{"type":"Point","coordinates":[116.58499908447266,40.080101013183594]}},
+                {"type":"Feature","properties":{"id":"3484","name":"Los Angeles International Airport","city":"Los Angeles","country":"United States","faa":"LAX","icao":"KLAX","alt":"125","tz-offset":"-8","dst":"A","tz":"America/Los_Angeles"},"geometry":{"type":"Point","coordinates":[-118.4079971,33.94250107]}},
+                {"type":"Feature","properties":{"id":"3334","name":"Melbourne Essendon Airport","city":"Melbourne","country":"Australia","faa":"MEB","icao":"YMEN","alt":"282","tz-offset":"10","dst":"O","tz":"Australia/Hobart"},"geometry":{"type":"Point","coordinates":[144.90199279785156,-37.72809982299805]}},
+                {"type":"Feature","properties":{"id":"3759","name":"Port Columbus International Airport","city":"Columbus","country":"United States","faa":"CMH","icao":"KCMH","alt":"815","tz-offset":"-5","dst":"A","tz":"America/New_York"},"geometry":{"type":"Point","coordinates":[-82.89189910888672,39.99800109863281]}},
+                {"type":"Feature","properties":{"id":"3406","name":"Shanghai Pudong International Airport","city":"Shanghai","country":"China","faa":"PVG","icao":"ZSPD","alt":"13","tz-offset":"8","dst":"U","tz":"Asia/Shanghai"},"geometry":{"type":"Point","coordinates":[121.80500030517578,31.143400192260742]}},
+                {"type":"Feature","properties":{"id":"2276","name":"Taiwan Taoyuan International Airport","city":"Taipei","country":"Taiwan","faa":"TPE","icao":"RCTP","alt":"106","tz-offset":"8","dst":"U","tz":"Asia/Taipei"},"geometry":{"type":"Point","coordinates":[121.233002,25.0777]}},
+                {"type":"Feature","properties":{"id":"7649","name":"Scottsdale Airport","city":"Scottsdale","country":"United States","faa":"ZSY","icao":"KSDL","alt":"1510","tz-offset":"-7","dst":"A","tz":"America/Phoenix"},"geometry":{"type":"Point","coordinates":[-111.91100311279,33.622898101807]}},
+                {"type":"Feature","properties":{"id":"8076","name":"Al Maktoum International Airport","city":"Dubai","country":"United Arab Emirates","faa":"DWC","icao":"OMDW","alt":"114","tz-offset":"4","dst":"U","tz":"Asia/Dubai"},"geometry":{"type":"Point","coordinates":[55.161389,24.896356]}},
+                {"type":"Feature","properties":{"id":"3624","name":"Teterboro Airport","city":"Teterboro","country":"United States","faa":"TEB","icao":"KTEB","alt":"9","tz-offset":"-5","dst":"A","tz":"America/New_York"},"geometry":{"type":"Point","coordinates":[-74.060798645,40.85010147089999]}}
+
+            ]
+        },
+        "trips": {
+            "type": "FeatureCollection",
+            "features": [
+                {"type":"Feature","properties":{"id": 1, "start": "White Plains, NY, USA", "end":"Beijing, Shanghai, China", "distance":"6939 NM", "time": "13 hours, 20 minutes", "speed": "Mach 0.87"}, "geometry":{"type":"LineString", "coordinates":[[-73.70760345458984,41.06700134277344],[116.58499908447266,40.080101013183594]]}},
+                {"type":"Feature","properties":{"id": 2,"start": "Los Angeles, CA, USA", "end":"Melbourne, Hobart, Australia", "distance":"7514 NM", "time": "14 hours, 58 minutes", "speed": "Mach 0.88"}, "geometry":{"type":"LineString", "coordinates":[[-118.4079971,33.94250107],[144.90199279785156,-37.72809982299805]]}},
+                {"type":"Feature","properties":{"id": 3,"start": "Columbus, OH, USA", "end":"Pudong, Shanghai, China", "distance":"6750 NM", "time": "14 hours, 35 minutes", "speed": "Mach 0.85"}, "geometry":{"type":"LineString", "coordinates":[[-82.89189910888672,39.99800109863281],[121.80500030517578,31.143400192260742]]}},
+                {"type":"Feature","properties":{"id": 4,"start": "Taipei, Taiwan", "end":"Scottsdale, AZ, USA", "distance":"6143 NM", "time": "10 hours, 57 minutes", "speed": "Mach 0.9"}, "geometry":{"type":"LineString", "coordinates":[[121.233002,25.0777],[-111.91100311279,33.622898101807]]}},
+                {"type":"Feature","properties":{"id": 5,"start": "Dubai, UAE", "end":"Teterboro, NJ, USA", "distance":"6159 NM", "time": "13 hours, 10 minutes", "speed": "Mach 0.87"}, "geometry":{"type":"LineString", "coordinates":[[55.161389,24.896356],[-74.060798645,40.85010147089999]]}}
+            ]
+        }
+    }
+}

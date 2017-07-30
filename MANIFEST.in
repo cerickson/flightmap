@@ -1,0 +1,4 @@
+include *.txt *.md
+recursive-include examples *.txt
+recursive-include flightmap *.py
+recursive-include tests *.py
