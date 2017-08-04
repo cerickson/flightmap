@@ -9,7 +9,7 @@ var angles = { x: -32, y: 81, z: 0},
     colorBorders = '#ccc',
     colorAirports = "#57B6D9",
     colorCurrent = "#f00",
-    tolerance = 5,
+    tolerance = 3,
     currentPath = '',
     airports,
     flights;
@@ -83,22 +83,48 @@ function leave(flightpath) {
   current.text('')
 }
 
+function sqr(x) { return x * x }
+function dist2(v, w) { return sqr(v.x - w.x) + sqr(v.y - w.y) }
+function distToSegmentSquared(p, v, w) {
+  var l2 = dist2(v, w);
+  if (l2 == 0) return dist2(p, v);
+  var t = ((p.x - v.x) * (w.x - v.x) + (p.y - v.y) * (w.y - v.y)) / l2;
+  t = Math.max(0, Math.min(1, t));
+  return dist2(p, { x: v.x + t * (w.x - v.x),
+                    y: v.y + t * (w.y - v.y) });
+}
+function distToSegment(p, v, w) { return Math.sqrt(distToSegmentSquared(p, v, w)); }
+
 function onPath(path, point, tolerance) {
     var a = {"x": point[0], "y": point[1]};
     var b = {"x": path[0][0], "y": path[0][1]};
     var c = {"x": path[1][0], "y": path[1][1]};
+    console.log(a);
+    console.log(b);
+    console.log(c);
 
-    //test if the point c is inside a pre-defined distance (tolerance) from the line
-    var distance = Math.abs((c.y - b.y)*a.x - (c.x - b.x)*a.y + c.x*b.y - c.y*b.x) / Math.sqrt(Math.pow((c.y-b.y),2) + Math.pow((c.x-b.x),2));
-    if (distance > tolerance){ return false; }
+    dist = distToSegment(a,b,c);
+    console.log(dist)
+    if (dist <= tolerance) {
+        return true;
+    } else {
+        return false;
+    }
+
+
+
+
+    // //test if the point c is inside a pre-defined distance (tolerance) from the line
+    // var distance = Math.abs((c.y - b.y)*a.x - (c.x - b.x)*a.y + c.x*b.y - c.y*b.x) / Math.sqrt(Math.pow((c.y-b.y),2) + Math.pow((c.x-b.x),2));
+    // if (distance > tolerance){ return false; }
     // console.log(distance);
-
-    //test if the point c is between a and b
-    var dotproduct = (c.x - a.x) * (b.x - a.x) + (c.y - a.y)*(b.y - a.y)
-    if(dotproduct < 0){ return false; }
-
-    var squaredlengthba = (b.x - a.x)*(b.x - a.x) + (b.y - a.y)*(b.y - a.y);
-    if(dotproduct > squaredlengthba){ return false; }
+    //
+    // //test if the point c is between a and b
+    // var dotproduct = (c.x - a.x) * (b.x - a.x) + (c.y - a.y)*(b.y - a.y)
+    // if(dotproduct < 0){ return false; }
+    //
+    // var squaredlengthba = (b.x - a.x)*(b.x - a.x) + (b.y - a.y)*(b.y - a.y);
+    // if(dotproduct > squaredlengthba){ return false; }
 
     return true;
 }
